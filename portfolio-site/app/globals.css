@@ -7,14 +7,13 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .header {
   width: 100%;
-  min-width: 100%;
   background-color: black;
   color: white;
   display: flex;

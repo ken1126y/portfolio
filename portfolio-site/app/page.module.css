@@ -1,6 +1,6 @@
 .blog-layout {
-  width: fit-content;
-  height: fit-content;
+  width: auto;
+  height: auto;
   display: flex;
   gap: 40px;
   margin: auto;
@@ -124,6 +124,7 @@
 .sidebar {
   width: 415px;
   height: auto;
+  align-self: flex-start;
 }
 
 .search-form {

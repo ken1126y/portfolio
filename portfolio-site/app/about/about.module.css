@@ -1,7 +1,8 @@
 .profile-layout {
   width: 1280px;;
-  height: fit-content;
-  margin: auto;
+  height: 100%;
+  margin: 40px auto;
+  
 }
 
 .profile-layout-header {
@@ -64,12 +65,11 @@
 }
 
 .profile-card__social-icon {
-  width: 24px;
-  height: 24px;
-  border: solid 1px black;
+  width: 16px;
+  height: 16px;
 }
 
-.profile-card__social-icon img {
+.profile-card__social-icon svg {
   height: 100%;
   width: 100%;
 }
@@ -151,60 +151,24 @@
 }
 
 .tech-stack__bar {
+  height: 100%;
   background-color: black;
   border-radius: 999px;
-  height: 100%;
   animation: bar-grow 1.2s ease-out forwards;
-}
-
-.tech-stack__row:nth-child(1) .tech-stack__bar {
-  --bar-width: 80%;
-}
-
-.tech-stack__row:nth-child(2) .tech-stack__bar {
-  --bar-width: 67%;
-}
-
-.tech-stack__row:nth-child(3) .tech-stack__bar {
-  --bar-width: 60%;
-}
-
-.tech-stack__row:nth-child(4) .tech-stack__bar {
-  --bar-width: 53%;
-}
-
-.tech-stack__row:nth-child(5) .tech-stack__bar {
-  --bar-width: 47%;
-}
-
-.tech-stack__value {
-  font-size: 14px;
-  font-weight: 600;
 }
 
 /* アニメーション */
 @keyframes bar-grow {
-  from {
-    width: 0;
-  }
-  to {
-    width: var(--bar-width);
-  }
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
 }
 
 /* 1440px以下 */
 @media (max-width: 1440px) {
-  .profile-layout {
-    width: 964px;
-  }
-
-  .tech-stack {
-    width: 964px;
-  }
-}
-
-/* 1024px以下 */
-@media (max-width: 1024px) {
   .profile-layout {
     width: 780px;
   }
