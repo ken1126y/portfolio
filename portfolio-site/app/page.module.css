@@ -208,18 +208,6 @@
 /* 1440px以下 */
 @media (max-width: 1440px) {
   .article-list {
-    grid-template-columns: 208px 208px 208px;
-    grid-template-rows: 117px 117px 117px 117px;
-  }
-
-  .sidebar {
-    width: 300px;
-  }
-}
-
-/* 1024px以下 */
-@media (max-width: 1024px) {
-  .article-list {
     grid-template-columns: 180px 180px 180px;
     grid-template-rows: 101px 101px 101px 101px;
   }

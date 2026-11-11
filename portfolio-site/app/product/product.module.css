@@ -160,9 +160,9 @@
     }
 }
 
-/* 1024以下 */
+/* 1440以下 */
 @media (max-width: 1440px) {
     .product-layout__overview {
-        width: 650px;
+        width: 780px;
     }
 }

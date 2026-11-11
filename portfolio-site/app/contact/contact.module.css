@@ -1,0 +1,186 @@
+.contact-layout {
+    width: auto;
+    height: auto;
+    margin: 40px auto;
+}
+
+.contact-layout__overview {
+    width: 1280px;
+    height: auto;
+}
+
+.contact-layout__header {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 800;
+    padding-bottom: 10px;
+    border-bottom: solid 1px black;
+}
+
+.contact-layout__columns {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    width: 80%;
+    border-radius: 12px;
+    border: solid 1px #E7E7E7;
+    background-color: #FAFAFA;
+    padding: 24px;
+}
+
+.contact-form__header {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 800;
+    padding-bottom: 10px;
+    border-bottom: solid 1px black;
+}
+
+.contact-form__meta {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #6B7280;
+    font-weight: 600;
+}
+
+.contact-form__rows {
+    width: 100%;
+}
+
+.contact-form__row {
+    width: 100%;
+    margin-top: 16px;
+    height: auto;
+    display: block;
+}
+
+.contact-form__label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 16px;
+}
+
+.contact-form__input {
+    padding: 8px;
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    border: solid 1px #d3d3d3;
+    height: auto;
+}
+
+.contact-form__textarea  {
+    padding: 16px;
+    width: 100%;
+    border: solid 1px #d3d3d3;
+    outline: none;
+    width: 100%;
+    height: 160px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    resize: none;
+    margin-top: 8px;
+}
+
+.contact-form__actions {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    height: 51px;
+    text-align: center;
+    padding: auto 0;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: black;
+    border-radius: 8px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.contact-form__actions:active {
+    background-color: #333;
+}
+
+.contact-form__input::file-selector-button {
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contact-form__input::file-selector-button:active {
+    background-color: #333;
+    outline: none;
+    box-shadow: none;
+}
+
+.privacy-policy {
+    width: 1280px;
+    height: auto;
+}
+
+.privacy-policy__header {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: 800;
+    padding-bottom: 10px;
+    border-bottom: solid 1px black;
+}
+
+.privacy-policy__description {
+    font-size: 16px;
+    font-weight: 500;
+    color: #374151;
+    margin-top: 20px;
+}
+
+.privacy-policy__content {
+    border-radius: 12px;
+    border: solid 1px #E7E7E7;
+    background-color: #FAFAFA;
+    margin-top: 20px;
+    padding: 4px 20px 20px 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.privacy-policy__section {
+    margin-top: 20px;
+}
+
+.privacy-policy__title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.privacy-policy__body {
+    margin-top: 2px;
+    font-size: 16px;
+}
+
+/* 1440px以下 */
+@media (max-width: 1440px) {
+    .contact-layout__overview {
+        width: 780px;
+    }
+
+    .contact-form {
+        width: 80%;
+        border-radius: 12px;
+        border: solid 1px #E7E7E7;
+        background-color: #FAFAFA;
+        padding: 24px;
+    }
+}
