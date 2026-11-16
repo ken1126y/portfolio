@@ -1,7 +1,38 @@
 
 import styles from "./product.module.css";
+import { Info, Bell, ShieldCheck, Link as LinkIcon, ArrowRight } from 'lucide-react';
 
 export default function ProductPage() {
+
+    const othersLists = [
+        {
+            id: 1,
+            icon: <Info size={36} />,
+            title: 'このサイトについて',
+            description: 'サイトの目的や、掲載しているコンテンツについて紹介します。'
+        },
+
+        {
+            id: 2,
+            icon: <Bell size={36} />,
+            title: 'お知らせ',
+            description: 'サイトの更新情報をお知らせします。'
+        },
+
+        {
+            id: 3,
+            icon: <ShieldCheck size={36} />,
+            title: 'プライバシーポリシー',
+            description: '個人情報の取り扱いについて掲載しています。'
+        },
+        {
+            id: 4,
+            icon: <LinkIcon size={36} />,
+            title: 'リンク',
+            description: 'SNSや関連サイトへのリンクをまとめています。'
+        },
+    ]
+
   const products= [
     {
       id: 1,

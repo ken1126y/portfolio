@@ -1,7 +1,5 @@
 .product-layout {
-    width: auto;
-    height: auto;
-    margin: 40px auto;
+    
 }
 
 .product-layout__overview {
@@ -160,9 +158,16 @@
     }
 }
 
+/* 2560以下 */
+@media (min-width: 2560px) {
+    .product-layout__overview {
+        width: 1621px;
+    }
+}
+
 /* 1440以下 */
 @media (max-width: 1440px) {
     .product-layout__overview {
-        width: 780px;
+        width: 946px;
     }
 }

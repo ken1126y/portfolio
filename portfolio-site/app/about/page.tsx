@@ -1,7 +1,37 @@
 import Image from "next/image";
 import styles from "./about.module.css";
+import { Info, Bell, ShieldCheck, Link as LinkIcon, ArrowRight } from 'lucide-react';
 
 export default function AboutPage() {
+
+    const othersLists = [
+        {
+            id: 1,
+            icon: <Info size={36} />,
+            title: 'このサイトについて',
+            description: 'サイトの目的や、掲載しているコンテンツについて紹介します。'
+        },
+
+        {
+            id: 2,
+            icon: <Bell size={36} />,
+            title: 'お知らせ',
+            description: 'サイトの更新情報をお知らせします。'
+        },
+
+        {
+            id: 3,
+            icon: <ShieldCheck size={36} />,
+            title: 'プライバシーポリシー',
+            description: '個人情報の取り扱いについて掲載しています。'
+        },
+        {
+            id: 4,
+            icon: <LinkIcon size={36} />,
+            title: 'リンク',
+            description: 'SNSや関連サイトへのリンクをまとめています。'
+        },
+    ]
 
   const skillStacks = [
     {
@@ -63,27 +93,27 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-    <div className={styles['tech-stack']}>
-      <h2 className={styles['tech-stack__header']}>スキルスタック</h2>
-      {skillStacks.map((skillStack) => {
-        return (
-          <div className={styles['tech-stack__chart']} key={skillStack.name}>
-            <h3 className={styles['tech-stack__meta']}>{skillStack.name}</h3>
-            <ul className={styles['tech-stack__rows']}>
-              {skillStack.skills.map((skill, index) => (
-                <li className={styles['tech-stack__row']} key={skill}>
-                  <div className={styles['tech-stack__label']}>{skill}</div>
-                  <div className={styles['tech-stack_track']}>
-                    <div className={styles['tech-stack__bar']}style={{ width: `${skillStack.levels[index]}%` }}></div>
-                  </div>
-                  <div className={styles['tech-stack__value']}>{skillStack.levels[index]}%</div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
-      })}
-    </div>
+      <div className={styles['tech-stack']}>
+        <h2 className={styles['tech-stack__header']}>スキルスタック</h2>
+          {skillStacks.map((skillStack) => {
+            return (
+              <div className={styles['tech-stack__chart']} key={skillStack.name}>
+                <h3 className={styles['tech-stack__meta']}>{skillStack.name}</h3>
+                <ul className={styles['tech-stack__rows']}>
+                  {skillStack.skills.map((skill, index) => (
+                    <li className={styles['tech-stack__row']} key={skill}>
+                      <div className={styles['tech-stack__label']}>{skill}</div>
+                      <div className={styles['tech-stack_track']}>
+                        <div className={styles['tech-stack__bar']}style={{ width: `${skillStack.levels[index]}%` }}></div>
+                      </div>
+                      <div className={styles['tech-stack__value']}>{skillStack.levels[index]}%</div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 }

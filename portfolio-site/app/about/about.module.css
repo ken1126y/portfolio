@@ -1,8 +1,10 @@
 .profile-layout {
-  width: 1280px;;
-  height: 100%;
-  margin: 40px auto;
-  
+
+}
+
+.profile-layout__overview {
+  width: 1280px;
+  gap: 40px;
 }
 
 .profile-layout-header {
@@ -12,10 +14,6 @@
   padding-bottom: 10px;
   font-size: 24px;
   font-weight: 800;
-}
-
-.profile-layout__overview {
-  gap: 40px;
 }
 
 .profile-layout__columns {
@@ -167,13 +165,24 @@
     }
 }
 
-/* 1440px以下 */
-@media (max-width: 1440px) {
-  .profile-layout {
-    width: 780px;
+/* 2560以下 */
+@media (min-width: 2560px) {
+  .profile-layout__overview {
+    width: 1621px;
   }
 
   .tech-stack {
-    width: 780px;
+    width: 1621px;
+  }
+}
+
+/* 1440px以下 */
+@media (max-width: 1440px) {
+  .profile-layout__overview {
+    width: 946px;
+  }
+
+  .tech-stack {
+    width: 946px;
   }
 }

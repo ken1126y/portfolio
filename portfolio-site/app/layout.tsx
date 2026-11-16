@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from 'next/link'
+import { Info, Bell, ShieldCheck, Link as LinkIcon, ArrowRight } from 'lucide-react';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,19 +21,64 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+
+  const othersLists = [
+      {
+          id: 1,
+          icon: <Info size={36} />,
+          title: 'このサイトについて',
+          description: 'サイトの目的や、掲載しているコンテンツについて紹介します。'
+      },
+      {
+          id: 2,
+          icon: <Bell size={36} />,
+          title: 'お知らせ',
+          description: 'サイトの更新情報をお知らせします。'
+      },
+      {
+          id: 3,
+          icon: <ShieldCheck size={36} />,
+          title: 'プライバシーポリシー',
+          description: '個人情報の取り扱いについて掲載しています。'
+      },
+      {
+          id: 4,
+          icon: <LinkIcon size={36} />,
+          title: 'リンク',
+          description: 'SNSや関連サイトへのリンクをまとめています。'
+      },
+  ]
+
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body>
         <header className="header">
-          <Link href="/" className="header__brand">MyBlog</Link>
-          <nav className="header__nav">
-            <Link href="/" className="header__nav-link">Blog</Link>
-            <Link href="/about" className="header__nav-link">About</Link>
-            <Link href="/product" className="header__nav-link">Product</Link>
-            <Link href="/contact" className="header__nav-link">Contact</Link>
-          </nav>
+            <Link href="/" className="header__brand">MyBlog</Link>
+            <nav className="header__nav">
+              <Link href="/" className="header__nav-link">Blog</Link>
+              <Link href="/about" className="header__nav-link">About</Link>
+              <Link href="/product" className="header__nav-link">Product</Link>
+              <Link href="/contact" className="header__nav-link">Contact</Link>
+            </nav>
         </header>
-        {children}
+        <main>
+          {children}
+          <div className="others-layout">
+            <h3 className="others-layout__header">その他</h3>
+            <div className="others-layout__content">
+              {othersLists.map((othersList) => (
+                <ul className="others-list" key={othersList.id}>
+                  <li className="others-list__item">
+                    <div className="others-list__icon">{othersList.icon}</div>
+                    <h3 className="others-list__title">{othersList.title}</h3>
+                    <div className="others-list__description">{othersList.description}</div>
+                    <div className="others-list__arrow"><button>→</button></div>
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
+        </main>
       </body>
     </html>
   );
