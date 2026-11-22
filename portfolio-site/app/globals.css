@@ -1,84 +1,125 @@
 @import "tailwindcss";
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 main {
+    width: 80%;
+    max-width: 1621px;
     margin: 80px auto;
 }
 
+/* header */
+
 .header {
-  width: 100%;
-  background-color: black;
-  color: white;
-  display: flex;
-  height: 70px;
-  align-items: center;
-  justify-content: space-around;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    padding: 0 5%;
+    background-color: #000;
+    color: #FFF;
 }
 
 .header__brand {
-  font-weight: 800;
-  font-size: 28px;
-  color: white;
-  text-decoration: none;
+    color: #FFF;
+    font-size: 28px;
+    font-weight: 800;
+    text-decoration: none;
 }
 
 .header__nav {
-  font-weight: 800;
-  display: flex;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-weight: 800;
 }
 
 .header__nav-link {
-  margin-left: 40px;
-  color: white;
-  border: none;
-  text-decoration: none;
-  font-size: 20px;
+    color: #FFF;
+    font-size: 20px;
+    text-decoration: none;
 }
 
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hamburger-menu__line {
+    display: block;
+    width: 28px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #FFF;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.hamburger-menu.is-active .hamburger-menu__line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.is-active .hamburger-menu__line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.is-active .hamburger-menu__line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* others page */
+
 .others-layout {
-    width: 1280px;
-    height: auto;
     margin-top: 40px;
 }
 
 .others-layout__header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
     font-size: 24px;
     font-weight: 800;
-    padding-bottom: 10px;
-    border-bottom: solid 1px black;
 }
 
 .others-layout__content {
-    margin-top: 12px;
     display: flex;
-    gap: auto;
     justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 12px;
 }
 
 .others-list {
-    width: 300px;
-    margin: 0 auto;
-    margin-top: 8px;
-    list-style: none;
-    border-radius: 12px;
-    border: solid 1px #E7E7E7;
-    background-color: #FAFAFA;
-    padding: 20px;
     display: flex;
+    flex: 1 1 calc(25% - 20px);
     flex-direction: column;
     gap: 8px;
+    min-width: 0;
+    margin-top: 8px;
+    padding: 20px;
+    border: 1px solid #E7E7E7;
+    border-radius: 12px;
+    background-color: #FAFAFA;
+    list-style: none;
 }
 
 .others-list__icon {
@@ -87,17 +128,17 @@ main {
 }
 
 .others-list__title {
+    margin-top: 16px;
     font-size: 20px;
     font-weight: 600;
-    margin-top: 16px;
 }
 
 .others-list__description {
+    min-height: 72px;
+    margin-top: 4px;
+    color: #2B2D33;
     font-size: 16px;
     font-weight: 500;
-    color: #2b2d33;
-    height: 72px;
-    margin-top: 4px;
 }
 
 .others-list__arrow {
@@ -105,57 +146,116 @@ main {
     text-align: end;
 }
 
-.others-list__arrow button {
-    border: none;
-    background: none;
-    outline: none;
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    font-size: 16px;
-    font-weight: 700;
-    color: white;
-    background-color: black;
+.others-list__link {
+    padding: 6px 10px;
     border-radius: 999px;
-    text-align: center;
-    align-content: center;
+    background-color: #000;
+    color: #FFF;
+    font-weight: 600;
+    text-decoration: none;
 }
 
-.others-list__arrow button:active {
-    background-color: #333;
-}
-
-/* 2560以下 */
-@media (min-width: 2560px) {
-  .others-layout {
-      width: 1621px;
-  }
-
-  .others-layout__content {
-      gap: 20px;
-  }
-
-  .others-list {
-    width: 100%;
-  }
+.others-list__link:active {
+    background-color: #444;
 }
 
 @media (max-width: 1440px) {
+    main {
+        width: 90%;
+    }
 
-  .others-layout {
-    width: 946px;
-  }
+    .others-list {
+        flex-basis: calc(50% - 10px);
+    }
+}
 
-  .others-layout__content {
-      flex-wrap: wrap;
-  }
+@media (max-width: 768px) {
+    main {
+        width: 92%;
+        margin: 50px auto;
+    }
 
-  .others-list {
-      width: 48%;
-      margin-top: 20px;
-  }
-  
-  .others-list__description {
-    height: 48px;
-  }
+    .header__nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        max-height: 0;
+        padding: 0 5%;
+        overflow: hidden;
+        background-color: #000;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height .3s ease, opacity .3s ease, padding .3s ease, visibility .3s ease;
+    }
+
+    .header__nav.is-active {
+        max-height: 300px;
+        padding: 10px 5% 20px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header__nav-link {
+        padding: 14px 0;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .others-list {
+        flex-basis: 100%;
+    }
+
+    .others-list__icon svg {
+      height: 28px;
+      width: 28px;
+    }
+
+    .others-list__title {
+      font-size: 18px;
+    }
+
+    .others-list__description {
+        min-height: auto;
+        font-size: 14px;
+    }
+
+    .others-list__arrow {
+      margin-top: 10px;
+    }
+
+    .others-list__link {
+      font-size: 12px;
+      padding: 5px 8px;
+    }
+}
+
+@media (max-width: 425px) {
+    main {
+        width: 94%;
+        margin: 40px auto;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .header__brand {
+        font-size: 24px;
+    }
+
+    .others-layout__header {
+        font-size: 20px;
+    }
+
+    .others-list__title {
+      margin-top: 10px;
+    }
 }

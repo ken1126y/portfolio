@@ -4,34 +4,6 @@ import { Info, Bell, ShieldCheck, Link as LinkIcon, ArrowRight } from 'lucide-re
 
 export default function ProductPage() {
 
-    const othersLists = [
-        {
-            id: 1,
-            icon: <Info size={36} />,
-            title: 'このサイトについて',
-            description: 'サイトの目的や、掲載しているコンテンツについて紹介します。'
-        },
-
-        {
-            id: 2,
-            icon: <Bell size={36} />,
-            title: 'お知らせ',
-            description: 'サイトの更新情報をお知らせします。'
-        },
-
-        {
-            id: 3,
-            icon: <ShieldCheck size={36} />,
-            title: 'プライバシーポリシー',
-            description: '個人情報の取り扱いについて掲載しています。'
-        },
-        {
-            id: 4,
-            icon: <LinkIcon size={36} />,
-            title: 'リンク',
-            description: 'SNSや関連サイトへのリンクをまとめています。'
-        },
-    ]
 
   const products= [
     {
@@ -41,8 +13,8 @@ export default function ProductPage() {
       thumbnail: "/images.png",
       description: "サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル",
       technologies: [
-      { name: "HTML / CSS", usagePercentage: 80 },
-      { name: "JavaScript", usagePercentage: 67 },
+      { name: "HTML", usagePercentage: 80 },
+      { name: "JS", usagePercentage: 67 },
       { name: "React", usagePercentage: 60 },
       { name: "Figma", usagePercentage: 53 }
       ]
@@ -51,11 +23,11 @@ export default function ProductPage() {
       id: 2,
       title: "Example2",
       url: "https://example2.com",
-      thumbnail: "/images.png",
+      thumbnail: "./youtube_img.png",
       description: "サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル2",
       technologies: [
-      { name: "HTML / CSS", usagePercentage: 80 },
-      { name: "JavaScript", usagePercentage: 67 },
+      { name: "HTML", usagePercentage: 80 },
+      { name: "JS", usagePercentage: 67 },
       { name: "React", usagePercentage: 60 },
       { name: "Figma", usagePercentage: 53 }
       ]
@@ -67,8 +39,8 @@ export default function ProductPage() {
       thumbnail: "/images.png",
       description: "サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル2",
       technologies: [
-      { name: "HTML / CSS", usagePercentage: 80 },
-      { name: "JavaScript", usagePercentage: 67 },
+      { name: "HTML", usagePercentage: 80 },
+      { name: "JS", usagePercentage: 67 },
       { name: "React", usagePercentage: 60 },
       { name: "Figma", usagePercentage: 53 }
       ]
@@ -89,7 +61,26 @@ export default function ProductPage() {
                     <div className={styles['product-card__title']}>{product.title}</div>
                     <div className={styles['product-card__note']}>サブタイトル</div>
                   </div>
-                  <a href={product.url} target="_blank" rel="noopener noreferrer" className={styles['product-card__link']}>{product.url}<img src="/arrow-up-right.svg" alt="" /></a>
+                  <div className={styles['product-card__link-group']}>
+                    <a
+                      href={product.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles['product-card__link']}
+                    >
+                      {product.url}
+                      <img src="/arrow-up-right.svg" alt="" />
+                    </a>
+
+                    <a
+                      href={product.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles['product-card__link-arrow']}
+                    >
+                      <img src="/arrow-up-right.svg" alt="" />
+                    </a>
+                  </div>
                 </div>
                 <div className={styles['product-card__thumbnail']}><img src={product.thumbnail} alt={`${product.title}のサムネイル`} /></div>
                 <div className={styles['product-card__body']}>
@@ -99,10 +90,12 @@ export default function ProductPage() {
                       {product.technologies.map(technology => (
                         <div className={styles['product-card__tech-row']} key={technology.name}>
                           <div className={styles['product-card__tech-item']}>{technology.name}</div>
-                          <div className={styles['product-card__tech-track']}>
-                            <div className={styles['product-card__tech-bar']} style={{ width: `${technology.usagePercentage}%` }}></div>
+                          <div className={styles['product-card__tech-usage']}>
+                            <div className={styles['product-card__tech-track']}>
+                              <div className={styles['product-card__tech-bar']} style={{ width: `${technology.usagePercentage}%` }}></div>
+                            </div>
+                            <div className={styles['product-card__tech-value']}>{technology.usagePercentage}%</div>
                           </div>
-                          <div className={styles['product-card__tech-value']}>{technology.usagePercentage}%</div>
                         </div>
                       ))}
                   </div>

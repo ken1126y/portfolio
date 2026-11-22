@@ -7,94 +7,53 @@ export default function Home() {
   const articles = [
     {
       id: 1,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事タイトル',
       date: '2026-11-26'
     },
     {
       id: 2,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事のタイトル',
       date: '2026-11-26'
     },
     {
       id: 3,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事のタイトル',
       date: '2026-11-26'
     },
       {
       id: 4,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事のタイトル',
       date: '2026-11-26'
     },
     {
       id: 5,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事のタイトル',
       date: '2026-11-26'
     },
-    {
-      id: 6,
-      img: '',
-      title: '記事のタイトル',
-      date: '2026-11-26'
-    },
-    {
-      id: 7,
-      img: '',
-      title: '記事のタイトル',
-      date: '2026-11-26'
-    },
-    {
-      id: 8,
-      img: '',
-      title: '記事のタイトル',
-      date: '2026-11-26'
-    },
-    {
-      id: 9,
-      img: '',
-      title: '記事のタイトル',
-      date: '2026-11-26'
-    },
-    {
-      id: 10,
-      img: '',
-      title: '記事のタイトル',
-      date: '2026-11-26'
-    },
-    {
-      id: 11,
-      img: '',
-      title: '記事のタイトル',
-      date: '2026-11-26'
-    },
-    {
-      id: 12,
-      img: '',
-      title: '記事のタイトル',
-      date: '2026-11-26'
-    }
+
   ]
 
   const latestArticles = [
     {
       id: 1,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事タイトル',
       date: '2026-11-26'
     },
     {
       id: 1,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事タイトル',
       date: '2026-11-26'
     },
     {
       id: 1,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事タイトル',
       date: '2026-11-26'
     },
@@ -103,19 +62,19 @@ export default function Home() {
   const popularArticles = [
       {
       id: 1,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事タイトル',
       date: '2026-11-26'
     },
     {
       id: 1,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事タイトル',
       date: '2026-11-26'
     },
     {
       id: 1,
-      img: '',
+      img: '1636144476552-PSkUAKkMDI.webp',
       title: '記事タイトル',
       date: '2026-11-26'
     },

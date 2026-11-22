@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from 'next/link'
-import { Info, Bell, ShieldCheck, Link as LinkIcon, ArrowRight } from 'lucide-react';
-
+import { Info, Bell, ShieldCheck, Link as LinkIcon, ArrowRight, Wind } from 'lucide-react';
+import { HamburgerMenu } from './components/hamburger-menu'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,25 +27,29 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           id: 1,
           icon: <Info size={36} />,
           title: 'このサイトについて',
-          description: 'サイトの目的や、掲載しているコンテンツについて紹介します。'
+          description: 'サイトの目的や、掲載コンテンツを紹介します。',
+          link: <Link href="/about-site" className="others-list__link">→</Link>
       },
       {
           id: 2,
           icon: <Bell size={36} />,
           title: 'お知らせ',
-          description: 'サイトの更新情報をお知らせします。'
+          description: 'サイトの更新情報をお知らせします。',
+          link: <Link href="/news" className="others-list__link">→</Link>
       },
       {
           id: 3,
           icon: <ShieldCheck size={36} />,
           title: 'プライバシーポリシー',
-          description: '個人情報の取り扱いについて掲載しています。'
+          description: '個人情報の取り扱いについて掲載しています。',
+          link: <Link href="/privacy-policy" className="others-list__link">→</Link>
       },
       {
           id: 4,
           icon: <LinkIcon size={36} />,
           title: 'リンク',
-          description: 'SNSや関連サイトへのリンクをまとめています。'
+          description: 'SNSや関連サイトへのリンクをまとめています。',
+          link: <a href="https://lit.link/kenW3p" target="_blank" rel="noopener noreferrer" className="others-list__link">→</a>
       },
   ]
 
@@ -53,13 +57,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body>
         <header className="header">
-            <Link href="/" className="header__brand">MyBlog</Link>
-            <nav className="header__nav">
-              <Link href="/" className="header__nav-link">Blog</Link>
-              <Link href="/about" className="header__nav-link">About</Link>
-              <Link href="/product" className="header__nav-link">Product</Link>
-              <Link href="/contact" className="header__nav-link">Contact</Link>
-            </nav>
+          <Link href="/" className="header__brand">
+            MyBlog
+          </Link>
+
+          <HamburgerMenu />
         </header>
         <main>
           {children}
@@ -72,7 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                     <div className="others-list__icon">{othersList.icon}</div>
                     <h3 className="others-list__title">{othersList.title}</h3>
                     <div className="others-list__description">{othersList.description}</div>
-                    <div className="others-list__arrow"><button>→</button></div>
+                    <div className="others-list__arrow">{othersList.link}</div>
                   </li>
                 </ul>
               ))}
